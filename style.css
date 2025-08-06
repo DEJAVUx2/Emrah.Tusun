@@ -6,29 +6,35 @@ body {
   overflow-x: hidden; /* Yatay scroll'u engeller */
   min-height: 100vh; /* Sayfa yüksekliği en az görünüm yüksekliği kadar olsun */
   color: #F9F6EF; /* Genel yazı rengi */
+  box-sizing: border-box;
 }
 
 /* NAVBAR (ÜST MENÜ) */
 .navbar {
-  display: inline-flex; /* Menü öğelerini yan yana dizer */
+  display: flex; /* Menü öğelerini yan yana dizer */
   align-items: center; /* Dikey hizalama ortalanır */
+  justify-content: flex-start; /* Logo ve menüyü sola yasla */
+  gap: 40px; /* Logo ile menü arasında makul boşluk */
   padding: 20px 40px; /* İç boşluk */
   background-color: transparent; /* Arka plan şeffaf */
   position: fixed; /* Sayfanın en üstüne sabitlenir */
-  width: 300%; /* Tam genişlik */
+  width: 100%; /* Tam genişlik */
   z-index: 10; /* Diğer ögelerin üstünde dursun */
 }
 
 /* LOGO AYARI */
 .navbar .logo {
-  margin-right: 200px; /* Menüden uzaklaşması için sağ boşluk */
-  margin-left: 30px;
+  margin: 0;
+  display: flex;
+  align-items: center;
 }
 
 /* LOGO RESMİ EFEKTLERİ */
 .navbar .logo img {
   transition: all 0.3s ease; /* Geçiş efekti */
   border-radius: 10px; /* Hafif köşe yumuşatma */
+  height: 60px; /* Logo yüksekliği */
+  width: auto;
 }
 
 .navbar .logo img:hover {
@@ -38,12 +44,15 @@ body {
 
 /* MENÜ NAV ALANI */
 .navbar nav {
-  flex-grow: 1; /* Menünün tüm alanı kaplamasını sağlar */
+  flex-grow: 1; /* Menünün kalan alanı kaplaması */
+  display: flex;
+  justify-content: center; /* Menü linkleri ortalanır */
 }
 
+/* Menü liste ayarları */
 .navbar ul {
   list-style: none; /* Madde işaretlerini kaldırır */
-  display: inline-flex; /* Liste elemanlarını yatay dizer */
+  display: flex; /* Liste elemanlarını yatay dizer */
   gap: 50px; /* Öğeler arası boşluk */
   margin: 0;
   padding: 0;
@@ -146,19 +155,19 @@ html {
 }
 
 /* DENEYİMLER ALANI */
-#Deneyimler {
+#deneyimler {
   height: 100vh;
   background-color: #1c002e;
   padding: 100px 20px;
   text-align: center;
 }
 
-#Deneyimler h2 {
+#deneyimler h2 {
   font-size: 40px;
   margin-bottom: 20px;
 }
 
-#Deneyimler p {
+#deneyimler p {
   font-size: 20px;
   max-width: 800px;
   margin: 0 auto;
@@ -280,4 +289,26 @@ footer {
   position: absolute;
   inset: 0;
   text-shadow: 0 0 0.8em #fff5; /* Hafif ışık saçan gölge */
+}
+
+/* MOBİL UYUMLULUK */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap; /* Satır taşmasını önle */
+    padding: 10px 20px;
+    gap: 20px; /* Mobilde boşluğu biraz azalt */
+  }
+  .navbar .logo {
+    margin-bottom: 10px;
+  }
+  .navbar nav {
+    width: 100%;
+    justify-content: center; /* Mobilde de ortada */
+  }
+  .navbar ul {
+    flex-direction: column;
+    gap: 15px;
+    font-size: 18px;
+    align-items: center;
+  }
 }
