@@ -1,0 +1,283 @@
+/* SAYFA GENEL AYARLARI */
+body {
+  margin: 0; /* Sayfanın kenar boşluklarını sıfırlar */
+  font-family: 'Fira Code', monospace; /* Yazı tipi (kod havası için güzel bir font) */
+  background: linear-gradient(180deg, #250047 0%, #1b0033 100%); /* Arka plan gradyeni */
+  overflow-x: hidden; /* Yatay scroll'u engeller */
+  min-height: 100vh; /* Sayfa yüksekliği en az görünüm yüksekliği kadar olsun */
+  color: #F9F6EF; /* Genel yazı rengi */
+}
+
+/* NAVBAR (ÜST MENÜ) */
+.navbar {
+  display: inline-flex; /* Menü öğelerini yan yana dizer */
+  align-items: center; /* Dikey hizalama ortalanır */
+  padding: 20px 40px; /* İç boşluk */
+  background-color: transparent; /* Arka plan şeffaf */
+  position: fixed; /* Sayfanın en üstüne sabitlenir */
+  width: 300%; /* Tam genişlik */
+  z-index: 10; /* Diğer ögelerin üstünde dursun */
+}
+
+/* LOGO AYARI */
+.navbar .logo {
+  margin-right: 200px; /* Menüden uzaklaşması için sağ boşluk */
+  margin-left: 30px;
+}
+
+/* LOGO RESMİ EFEKTLERİ */
+.navbar .logo img {
+  transition: all 0.3s ease; /* Geçiş efekti */
+  border-radius: 10px; /* Hafif köşe yumuşatma */
+}
+
+.navbar .logo img:hover {
+  transform: scale(1.1); /* Üzerine gelince biraz büyür */
+  box-shadow: 0 0 15px #00ffcc, 0 0 30px #00ffcc; /* Parlak gölge efekti */
+}
+
+/* MENÜ NAV ALANI */
+.navbar nav {
+  flex-grow: 1; /* Menünün tüm alanı kaplamasını sağlar */
+}
+
+.navbar ul {
+  list-style: none; /* Madde işaretlerini kaldırır */
+  display: inline-flex; /* Liste elemanlarını yatay dizer */
+  gap: 50px; /* Öğeler arası boşluk */
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+}
+
+/* MENÜ LİNKLERİ */
+.navbar ul li a {
+  text-decoration: none; /* Alt çizgi yok */
+  color: white; /* Yazı rengi */
+  font-weight: 300; /* İnce yazı */
+  transition: all 0.3s ease; /* Hover geçişi */
+}
+
+/* MENÜ AKTİF VE HOVER DURUMU */
+.navbar ul li a.active,
+.navbar ul li a:hover {
+  color: hsl(138, 88%, 40%); /* Yumuşak yeşil renk */
+  transform: scale(1.08); /* Hafif büyüme */
+  text-shadow: 0 0 3px lch(56.13% 71.72 141.91); /* Hafif parıltı efekti */
+}
+
+/* YUMUŞAK KAYDIRMA */
+html {
+  scroll-behavior: smooth; /* Anchor linkleri yavaşça kaydırır */
+}
+
+/* ANASAYFA ALANI */
+#anasayfa {
+  height: 100vh; /* Ekranın tamamını kaplar */
+  background-color: #1b0033;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+#anasayfa h2 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+#anasayfa p {
+  font-size: 24px;
+  max-width: 600px;
+}
+
+/* HAKKIMDA ALANI */
+#hakkimda {
+  height: 100vh;
+  background-color: #220044;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+#hakkimda h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+#hakkimda p {
+  font-size: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ÇALIŞMALAR ALANI */
+#calismalar {
+  height: 100vh;
+  background-color: #29005a;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+#calismalar h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+#calismalar p {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+#calismalar a {
+  color: #00ffcc;
+  text-decoration: none;
+  font-size: 18px;
+  border: 1px solid #00ffcc;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+#calismalar a:hover {
+  background: #00ffcc;
+  color: #000; /* Hover olduğunda zıt renk */
+}
+
+/* DENEYİMLER ALANI */
+#Deneyimler {
+  height: 100vh;
+  background-color: #1c002e;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+#Deneyimler h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+#Deneyimler p {
+  font-size: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* SERTİFİKALAR ALANI */
+#sertifikalar {
+  height: 100vh;
+  background-color: #2d004d;
+  padding: 100px 20px;
+  text-align: center;
+  color: #F9F6EF;
+}
+
+#sertifikalar h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+#sertifikalar p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.cert-single {
+  display: inline-block;
+  background-color: #3a005e;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cert-single:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 255, 140, 0.4);
+}
+
+.cert-single img {
+  max-width: 300px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.cert-single p {
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+/* İLETİŞİM ALANI */
+#iletisim {
+  height: 100vh;
+  background-color: #140022;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+#iletisim h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+#iletisim p {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* ALT BİLGİ (FOOTER) */
+footer {
+  background-color: #1f003f; 
+  padding: 40px 20px;
+  text-align: center;
+  transition: none; 
+}
+
+/* HERO (BAŞLANGIÇ) BÖLÜMÜ */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 100px 20px 20px 20px;
+  position: relative;
+}
+
+.title {
+  font-size: 90px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 2px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.1); /* Arka planda büyük soluk yazı */
+  position: absolute;
+  top: 30%;
+  z-index: 0;
+}
+
+.scroll {
+  margin-top: 40px;
+  font-size: 14px;
+  color: #ccc;
+  z-index: 2;
+}
+
+/* YILDIZ ANİMASYONU */
+.star {
+  position: absolute;
+  transform-style: preserve-3d;
+  color: red;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.star::before {
+  content: "✦"; /* Yıldız sembolü */
+  color: inherit;
+  position: absolute;
+  inset: 0;
+  text-shadow: 0 0 0.8em #fff5; /* Hafif ışık saçan gölge */
+}

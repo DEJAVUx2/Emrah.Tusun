@@ -1,0 +1,138 @@
+<!DOCTYPE html> <!-- HTML5 doctype bildirimi -->
+<html lang="tr"> <!-- Sayfa dili Türkçe olarak ayarlandı -->
+<head>
+  <meta charset="UTF-8" /> <!-- Türkçe karakter desteği için karakter seti -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- Mobil uyumluluk için -->
+  <meta name="description" content="emrah tusun web sitesi"> <!-- Arama motorları için açıklama -->
+  <meta name="keywords" content="emrah , siber güvenlik , linux, soc"> <!-- Arama motorları için anahtar kelimeler -->
+  <title>EMRAH</title> <!-- Sekmede görünen başlık -->
+  <link rel="stylesheet" href="style.css" /> <!-- Harici CSS dosyasını bağlar -->
+</head>
+<body>
+  <!-- ÜST MENÜ (NAVBAR) -->
+  <header class="navbar">
+    <div class="logo">
+      <a href="#hero"> <!-- Logo tıklandığında en üste götürür -->
+        <img src="hacker.png" width="100" alt="Logo" /> <!-- Logo resmi -->
+      </a>
+    </div>
+    <nav>
+      <ul>
+        <!-- Navigasyon menü öğeleri -->
+        <li><a href="#hero" class="active">Anasayfa</a></li>
+        <li><a href="#hakkimda">Hakkımda</a></li>
+        <li><a href="#calismalar">Çalışmalar</a></li>
+        <li><a href="#Deneyimler">Deneyimler</a></li>
+        <li><a href="#sertifikalar">Sertifikalar</a></li>
+        <li><a href="#iletisim">İletişim</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- KAHRAMAN ALANI (Giriş kısmı) -->
+  <section id="hero" class="hero">
+    <h1 class="title">SİBER<br/>GÜVENLİK</h1> <!-- Ana başlık -->
+    <p class="scroll">DAHA FAZLASI İÇİN AŞAĞI KAYDIR</p> <!-- Bilgilendirici metin -->
+  </section>
+
+  <!-- ANASAYFA BİLGİLENDİRME -->
+  <section id="anasayfa">
+    <h2>Hoş Geldiniz</h2>
+    <p>Siber güvenliğe adim at, bilgiye güç kat!</p>
+  </section>
+
+  <!-- HAKKIMDA BÖLÜMÜ -->
+  <section id="hakkimda">
+    <h2>Hakkımda</h2>
+    <p>Ben Emrah Tusun. Siber güvenlik alanında çalışıyor ve bu alanda derinleşmeye odaklanıyorum.
+    Linux sistemleri, ağ güvenliği, olay müdahale (IR), log analizi ve SOC gibi alanlarda kendimi geliştiriyorum. 
+    Sızma testleri, tersine mühendislik ve CTF yarışmalarıyla teknik becerilerimi artırıyorum. Hedefim Türkiye'de ve dünyada dijital güvenliğe katkı sunmak.</p>
+  </section>
+
+  <!-- ÇALIŞMALARIM BÖLÜMÜ -->
+  <section id="calismalar">
+    <h2>Çalışmalarım</h2>
+    <p>GitHub hesabımda sızma testleri, zafiyetli web uygulamaları ve Python script projelerimi bulabilirsiniz.</p>
+    <a href="https://github.com/DEJAVUx2" target="_blank">GitHub Profilime Git</a> <!-- Yeni sekmede açılır -->
+  </section>
+
+  <!-- DENEYİMLER BÖLÜMÜ -->
+  <section id="Deneyimler">
+    <h2>Deneyimler</h2>
+    <p>CTF yarışmalarında elde ettiğim tecrübelerle pratik becerilerimi geliştiriyorum. Siber Vatan Bootcamp programında yüz yüze eğitimlere katıldım.</p>
+  </section>
+
+  <!-- SERTİFİKALAR BÖLÜMÜ -->
+  <section id="sertifikalar">
+    <h2>Sertifikam</h2>
+    <p>Siber güvenlik yolculuğumun ilk adımı!</p>
+    
+    <div class="cert-single">
+      <a href="FOTO.png" target="_blank" class="cert-link">
+        <img src="FOTO.png" alt="Siber Vatan Sertifikası" /> <!-- Sertifika görseli -->
+      </a>
+      <p>Siber Vatan Bootcamp Katılım Sertifikası</p>
+    </div>
+  </section>
+
+  <!-- İLETİŞİM BİLGİLERİ -->
+  <section id="iletisim">
+    <h2>İletişim</h2>
+    <p>Benimle iletişime geçmek için aşağıdaki e-posta adresini kullanabilirsiniz.</p>
+    <p><strong>emrahtusun0@gmail.com</strong></p>
+  </section>
+
+  <!-- ALT BİLGİ (FOOTER) -->
+  <footer>
+    <p>© 2025 Emrah Tusun. Tüm hakları saklıdır.</p>
+    <p>İletişim: emrahtusun0@gmail.com</p>
+  </footer>
+
+  <!-- FARE HAREKETİYLE YILDIZ ANİMASYONU -->
+  <script>
+    // Değişken tanımları
+    let x1 = 0, y1 = 0;
+    const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0),
+      dist_to_draw = 50, // minimum mesafe
+      delay = 1000, // animasyon süresi
+      fsize = ['1.1rem', '1.4rem', '.8rem', '1.7rem'], // yazı boyutu seçenekleri
+      colors = ['#E23636', '#F9F3EE', '#E1F8DC', '#B8AFE6', '#AEE1CD', '#5EB0E5'], // renkler
+      rand = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min, // rastgele sayı
+      selRand = (o) => o[rand(0, o.length - 1)], // listeden rastgele seç
+      distanceTo = (x1, y1, x2, y2) => Math.sqrt((Math.pow(x2 - x1, 2)) + (Math.pow(y2 - y1, 2))), // iki nokta arası mesafe
+      shouldDraw = (x, y) => distanceTo(x1, y1, x, y) >= dist_to_draw, // yeterince uzaksa çizecek
+      addStr = (x, y) => {
+        const str = document.createElement("div");
+        str.innerHTML = '&#10022;'; // yıldız karakteri
+        str.className = 'star';
+        str.style.top = `${y + rand(-20, 20)}px`;
+        str.style.left = `${x}px`;
+        str.style.color = selRand(colors);
+        str.style.fontSize = selRand(fsize);
+        document.body.appendChild(str);
+        const fs = 10 + 5 * parseFloat(getComputedStyle(str).fontSize);
+        str.animate({
+          translate: `0 ${(y + fs) > vh ? vh - y : fs}px`,
+          opacity: 0,
+          transform: `rotateX(${rand(1, 500)}deg) rotateY(${rand(1, 500)}deg)`
+        }, {
+          duration: delay,
+          fill: 'forwards',
+        });
+        setTimeout(() => {
+          str.remove(); // animasyon bittikten sonra kaldır
+        }, delay);
+      };
+
+    // Mouse hareketi olunca yıldız çiz
+    addEventListener("mousemove", (e) => {
+      const { clientX, clientY } = e;
+      if (shouldDraw(clientX, clientY)) {
+        addStr(clientX, clientY);
+        x1 = clientX;
+        y1 = clientY;
+      }
+    });
+  </script>
+</body>
+</html>
