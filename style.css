@@ -1,25 +1,25 @@
 /* SAYFA GENEL AYARLARI */
 body {
-  margin: 0; /* Sayfanın kenar boşluklarını sıfırlar */
-  font-family: 'Fira Code', monospace; /* Yazı tipi (kod havası için güzel bir font) */
-  background: linear-gradient(180deg, #250047 0%, #1b0033 100%); /* Arka plan gradyeni */
-  overflow-x: hidden; /* Yatay scroll'u engeller */
-  min-height: 100vh; /* Sayfa yüksekliği en az görünüm yüksekliği kadar olsun */
-  color: #F9F6EF; /* Genel yazı rengi */
+  margin: 0;
+  font-family: 'Fira Code', monospace;
+  background: linear-gradient(180deg, #250047 0%, #1b0033 100%);
+  overflow-x: hidden;
+  min-height: 100vh;
+  color: #F9F6EF;
   box-sizing: border-box;
 }
 
 /* NAVBAR (ÜST MENÜ) */
 .navbar {
-  display: flex; /* Menü öğelerini yan yana dizer */
-  align-items: center; /* Dikey hizalama ortalanır */
-  justify-content: flex-start; /* Logo ve menüyü sola yasla */
-  gap: 40px; /* Logo ile menü arasında makul boşluk */
-  padding: 20px 40px; /* İç boşluk */
-  background-color: transparent; /* Arka plan şeffaf */
-  position: fixed; /* Sayfanın en üstüne sabitlenir */
-  width: 100%; /* Tam genişlik */
-  z-index: 10; /* Diğer ögelerin üstünde dursun */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 40px;
+  padding: 20px 40px;
+  background-color: transparent;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
 }
 
 /* LOGO AYARI */
@@ -31,58 +31,55 @@ body {
 
 /* LOGO RESMİ EFEKTLERİ */
 .navbar .logo img {
-  transition: all 0.3s ease; /* Geçiş efekti */
-  border-radius: 10px; /* Hafif köşe yumuşatma */
-  height: 60px; /* Logo yüksekliği */
+  transition: all 0.3s ease;
+  border-radius: 10px;
+  height: 100px; /* LOGO BÜYÜKLÜĞÜ */
   width: auto;
 }
 
 .navbar .logo img:hover {
-  transform: scale(1.1); /* Üzerine gelince biraz büyür */
-  box-shadow: 0 0 15px #00ffcc, 0 0 30px #00ffcc; /* Parlak gölge efekti */
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #00ffcc, 0 0 30px #00ffcc;
 }
 
 /* MENÜ NAV ALANI */
 .navbar nav {
-  flex-grow: 1; /* Menünün kalan alanı kaplaması */
+  flex-grow: 1;
   display: flex;
-  justify-content: center; /* Menü linkleri ortalanır */
+  justify-content: center;
 }
 
-/* Menü liste ayarları */
 .navbar ul {
-  list-style: none; /* Madde işaretlerini kaldırır */
-  display: flex; /* Liste elemanlarını yatay dizer */
-  gap: 50px; /* Öğeler arası boşluk */
+  list-style: none;
+  display: flex;
+  gap: 50px;
   margin: 0;
   padding: 0;
   font-size: 20px;
 }
 
-/* MENÜ LİNKLERİ */
 .navbar ul li a {
-  text-decoration: none; /* Alt çizgi yok */
-  color: white; /* Yazı rengi */
-  font-weight: 300; /* İnce yazı */
-  transition: all 0.3s ease; /* Hover geçişi */
+  text-decoration: none;
+  color: white;
+  font-weight: 300;
+  transition: all 0.3s ease;
 }
 
-/* MENÜ AKTİF VE HOVER DURUMU */
 .navbar ul li a.active,
 .navbar ul li a:hover {
-  color: hsl(138, 88%, 40%); /* Yumuşak yeşil renk */
-  transform: scale(1.08); /* Hafif büyüme */
-  text-shadow: 0 0 3px lch(56.13% 71.72 141.91); /* Hafif parıltı efekti */
+  color: hsl(138, 88%, 40%);
+  transform: scale(1.08);
+  text-shadow: 0 0 3px lch(56.13% 71.72 141.91);
 }
 
 /* YUMUŞAK KAYDIRMA */
 html {
-  scroll-behavior: smooth; /* Anchor linkleri yavaşça kaydırır */
+  scroll-behavior: smooth;
 }
 
 /* ANASAYFA ALANI */
 #anasayfa {
-  height: 100vh; /* Ekranın tamamını kaplar */
+  height: 100vh;
   background-color: #1b0033;
   display: flex;
   flex-direction: column;
@@ -151,23 +148,23 @@ html {
 
 #calismalar a:hover {
   background: #00ffcc;
-  color: #000; /* Hover olduğunda zıt renk */
+  color: #000;
 }
 
 /* DENEYİMLER ALANI */
-#deneyimler {
+#Deneyimler {
   height: 100vh;
   background-color: #1c002e;
   padding: 100px 20px;
   text-align: center;
 }
 
-#deneyimler h2 {
+#Deneyimler h2 {
   font-size: 40px;
   margin-bottom: 20px;
 }
 
-#deneyimler p {
+#Deneyimler p {
   font-size: 20px;
   max-width: 800px;
   margin: 0 auto;
@@ -237,10 +234,10 @@ html {
 
 /* ALT BİLGİ (FOOTER) */
 footer {
-  background-color: #1f003f; 
+  background-color: #1f003f;
   padding: 40px 20px;
   text-align: center;
-  transition: none; 
+  transition: none;
 }
 
 /* HERO (BAŞLANGIÇ) BÖLÜMÜ */
@@ -261,7 +258,7 @@ footer {
   line-height: 1;
   letter-spacing: 2px;
   margin: 0;
-  color: rgba(255, 255, 255, 0.1); /* Arka planda büyük soluk yazı */
+  color: rgba(255, 255, 255, 0.1);
   position: absolute;
   top: 30%;
   z-index: 0;
@@ -284,26 +281,26 @@ footer {
 }
 
 .star::before {
-  content: "✦"; /* Yıldız sembolü */
+  content: "✦";
   color: inherit;
   position: absolute;
   inset: 0;
-  text-shadow: 0 0 0.8em #fff5; /* Hafif ışık saçan gölge */
+  text-shadow: 0 0 0.8em #fff5;
 }
 
 /* MOBİL UYUMLULUK */
 @media (max-width: 768px) {
   .navbar {
-    flex-wrap: wrap; /* Satır taşmasını önle */
+    flex-wrap: wrap;
     padding: 10px 20px;
-    gap: 20px; /* Mobilde boşluğu biraz azalt */
+    gap: 20px;
   }
   .navbar .logo {
     margin-bottom: 10px;
   }
   .navbar nav {
     width: 100%;
-    justify-content: center; /* Mobilde de ortada */
+    justify-content: center;
   }
   .navbar ul {
     flex-direction: column;
