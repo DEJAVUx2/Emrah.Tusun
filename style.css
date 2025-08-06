@@ -214,12 +214,34 @@ html {
   font-size: 18px;
 }
 
+@media (max-width: 768px) {
+  #sertifikalar {
+    height: auto;
+    padding: 60px 20px;
+  }
+
+  .cert-single {
+    display: block;
+    margin: 0 auto 20px auto;
+    width: 90%;
+    max-width: 320px;
+  }
+
+  .cert-single img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+
 /* İLETİŞİM ALANI */
 #iletisim {
-  height: 100vh;
+  height: auto; /* Form yüksekliği değişken olacağından auto daha uygun */
   background-color: #140022;
   padding: 100px 20px;
   text-align: center;
+  color: #F9F6EF; /* Yazı rengi */
+  font-family: 'Fira Code', monospace;
 }
 
 #iletisim h2 {
@@ -229,7 +251,48 @@ html {
 
 #iletisim p {
   font-size: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 30px; /* Formdan önce biraz boşluk */
+}
+
+/* Form stili */
+#iletisim form {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+#iletisim label {
+  font-size: 18px;
+}
+
+#iletisim input, 
+#iletisim textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-family: 'Fira Code', monospace;
+  font-size: 16px;
+  resize: vertical; /* Textarea boyutu ayarlanabilir */
+}
+
+#iletisim button {
+  background-color: hsl(138, 88%, 40%);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin: 20px auto 0 auto;
+}
+
+#iletisim button:hover {
+  background-color: hsl(138, 88%, 30%);
 }
 
 /* ALT BİLGİ (FOOTER) */
@@ -288,6 +351,41 @@ footer {
   text-shadow: 0 0 0.8em #fff5;
 }
 
+/* HAMBURGER BUTONU */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  box-sizing: border-box;
+  z-index: 20;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s linear;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
 /* MOBİL UYUMLULUK */
 @media (max-width: 768px) {
   .navbar {
@@ -298,14 +396,52 @@ footer {
   .navbar .logo {
     margin-bottom: 10px;
   }
+  .navbar .logo img {
+    height: 60px; /* Mobilde logo küçültüldü */
+    width: auto;
+  }
   .navbar nav {
-    width: 100%;
-    justify-content: center;
+    position: fixed;
+    top: 70px; /* Navbar yüksekliğine göre ayarlandı */
+    right: 0;
+    height: calc(100vh - 70px);
+    width: 250px;
+    background-color: #220044;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    padding-top: 20px;
+    box-shadow: -4px 0 12px rgba(0,0,0,0.4);
+    z-index: 15;
+    flex-grow: 0;
+    justify-content: flex-start;
+  }
+  .navbar nav.active {
+    transform: translateX(0);
   }
   .navbar ul {
     flex-direction: column;
-    gap: 15px;
+    gap: 20px; /* Aralık artırıldı */
     font-size: 18px;
-    align-items: center;
+    padding-left: 20px;
+    margin: 0;
+  }
+  .navbar ul li a {
+    display: block;
+    padding: 12px 8;
+    color: white;
+    font-weight: 500;
+    border-bottom: 1px solid #3a005e;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  .navbar ul li a:hover,
+  .navbar ul li a.active {
+    background-color: hsl(138, 88%, 40%);
+    color: #fff;
+    border-bottom: none;
+  }
+
+  /* Hamburger görünür yapıldı */
+  .hamburger {
+    display: flex;
   }
 }
