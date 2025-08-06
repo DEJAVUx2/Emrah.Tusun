@@ -16,6 +16,14 @@
         <img src="hacker.png" width="100" alt="Logo" /> <!-- Logo resmi -->
       </a>
     </div>
+
+    <!-- Hamburger buton -->
+    <button class="hamburger" aria-label="Menüyü aç/kapat" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
     <nav>
       <ul>
         <!-- Navigasyon menü öğeleri -->
@@ -53,19 +61,27 @@
   <section id="calismalar">
     <h2>Çalışmalarım</h2>
     <p>GitHub hesabımda sızma testleri, zafiyetli web uygulamaları ve Python script projelerimi bulabilirsiniz.</p>
-    <a href="https://github.com/DEJAVUx2" target="_blank">GitHub Profilime Git</a> <!-- Yeni sekmede açılır -->
+    <a href="https://github.com/DEJAVUx2" target="_blank" rel="noopener noreferrer" >GitHub Profilime Git</a> <!-- Yeni sekmede açılır -->
+    <p>Kariyerim, teknik becerilerim ve sektörle ilgili paylaşımlarım için LinkedIn profilimi inceleyebilirsiniz.</p>
+    <p> İlgileniyorsanız bağlantı kurmaktan memnuniyet duyarım.</p>
+    <a href="https://www.linkedin.com/in/emrah-tusun-7b13912b4" target="_blank" rel="noopener noreferrer" >Linkedln </a>
   </section>
 
   <!-- DENEYİMLER BÖLÜMÜ -->
   <section id="Deneyimler">
     <h2>Deneyimler</h2>
-    <p>CTF yarışmalarında elde ettiğim tecrübelerle pratik becerilerimi geliştiriyorum. Siber Vatan Bootcamp programında yüz yüze eğitimlere katıldım.</p>
+     <p>
+    Akbank SOC (Security Operations Center) eğitimi aldım ve olay müdahale süreçleri üzerine deneyim kazandım. <br/>
+    Siber Vatan Siber Güvenlik eğitim programına katılarak siber güvenlik temelleri ve ileri düzey konularda kendimi geliştirdim. <br/>
+    Cisco platformunda CCNA eğitimine başladım, ağ yönetimi ve temel network güvenliği hakkında bilgi sahibiyim. <br/>
+    Hem mavi takım (defansif güvenlik) hem de kırmızı takım (penetrasyon testleri ve saldırı simülasyonları) alanlarında aktif olarak çalışıyor ve tecrübe kazanıyorum.
+  </p>
   </section>
 
   <!-- SERTİFİKALAR BÖLÜMÜ -->
   <section id="sertifikalar">
     <h2>Sertifikam</h2>
-    <p>Siber güvenlik yolculuğumun ilk adımı!</p>
+    <p>SiberVatan yolculuğumun ilk adımı!</p>
     
     <div class="cert-single">
       <a href="FOTO.png" target="_blank" class="cert-link">
@@ -73,13 +89,39 @@
       </a>
       <p>Siber Vatan Bootcamp Katılım Sertifikası</p>
     </div>
+
+    <div class="cert-single">
+      <a href="AKBANK.png" target="_blank" class="cert-link">
+        <img src="AKBANK.png" alt="Akbank" /> <!-- Sertifika görseli -->
+      </a>
+      <p>Siber Güvenlik Analisti Eğitim Programı </p>
+    </div>
+
+      <div class="cert-single">
+      <a href="cyber.png" target="_blank" class="cert-link">
+        <img src="cyber.png" alt="CyberOps Associate" /> <!-- Sertifika görseli -->
+      </a>
+      <p>CyberOps Associate</p>
+    </div>
   </section>
 
   <!-- İLETİŞİM BİLGİLERİ -->
   <section id="iletisim">
     <h2>İletişim</h2>
-    <p>Benimle iletişime geçmek için aşağıdaki e-posta adresini kullanabilirsiniz.</p>
-    <p><strong>emrahtusun0@gmail.com</strong></p>
+    <p>Benimle iletişime geçmek için aşağıdaki formu kullanabilirsiniz.</p>
+    
+    <form action="https://formspree.io/f/xpwlybnv" method="POST">
+      <label for="name">Adınız:</label><br/>
+      <input type="text" id="name" name="name" required /><br/><br/>
+
+      <label for="email">E-posta:</label><br/>
+      <input type="email" id="email" name="_replyto" required /><br/><br/>
+
+      <label for="message">Mesajınız:</label><br/>
+      <textarea id="message" name="message" rows="5" required></textarea><br/><br/>
+
+      <button type="submit">Gönder</button>
+    </form>
   </section>
 
   <!-- ALT BİLGİ (FOOTER) -->
@@ -132,6 +174,21 @@
         x1 = clientX;
         y1 = clientY;
       }
+    });
+  </script>
+
+  <!-- Hamburger menü için JS -->
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.navbar nav');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+
+      // Erişilebilirlik için aria-expanded ayarı
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', !expanded);
     });
   </script>
 </body>
